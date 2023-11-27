@@ -1,25 +1,23 @@
 <template>
-    <div>
-        <p >Reaction Time: {{ score }} ms</p>
-        <p class="rank">{{ rank }}</p>
-    </div>
+    <p>Reaction Time: {{ score }} ms</p>
+    <p class="rank">{{ rank }}</p>
 </template>
 
 <script>
 export default {
-    props:[ 'score' ],
-    data(){
-        return{
-            rank: null,
+    props:['score'],
+    data() {
+        return {
+            rank: null
         }
     },
-    mounted(){
+    mounted() {
         if (this.score < 250){
-            this.rank = 'Fingers';
+            this.rank = 'Sehr Gut';
         }else if (this.score < 400){
-            this.rank = 'Reflexes';
+            this.rank = 'Gut';
         }else {
-            this.rank = ' pace...'
+            this.rank = 'Ausreichend'
         }
     }
 
